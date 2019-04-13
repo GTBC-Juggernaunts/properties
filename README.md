@@ -1,2 +1,2 @@
-# properties
+# Properties
 Personal property practice project
