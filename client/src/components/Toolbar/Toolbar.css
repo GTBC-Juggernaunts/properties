@@ -1,0 +1,54 @@
+.toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #37505c;
+  height: 65px;
+}
+
+.spacer {
+  /* takes free space between logo and links */
+  flex: 1;
+}
+
+/* add flex box to all elements in the nav bar */
+.toolbar-navigation {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.toolbar-logo {
+  margin-left: 1rem;
+}
+
+.toolbar-logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.toolbar-navigation-items ul {
+  /* remove bullets from list items */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.toolbar-navigation-items li {
+  /* padding on left and right */
+  padding: 0 0.5rem;
+}
+
+.toolbar-navigation-items a {
+  color: white;
+  text-decoration: none;
+}
+
+.toolbar-navigation-items a:hover,
+.toolbar-navigation-items a:active {
+  color: #f76f8e;
+}
