@@ -1,0 +1,44 @@
+.side-drawer {
+  height: 100%;
+  background: #ffead0;
+  box-shadow: 1px 0 7px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70%;
+  max-width: 400px;
+  /* has higher z-index vs backdrop so that it can be above */
+  z-index: 200;
+  /* hide side drawer if open class is not enabled */
+  transform: translateX(-100%);
+  /* listen to transform */
+  transition: transform 0.3s ease-out;
+}
+
+.side-drawer.open {
+  transform: translateX(0);
+}
+
+.side-drawer ul {
+  /* make sure list takes full height of sidebar to correctly center elements */
+  height: 100%;
+  justify-content: center;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-drawer li {
+  margin: 0.5rem 0;
+}
+
+.side-drawer a {
+  text-decoration: none;
+  color: #37505c;
+  font-size: 1.2rem;
+}
+
+.side-drawer a:hover,
+.side-drawer a:active {
+  color: #f76f8e;
+}
