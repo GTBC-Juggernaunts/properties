@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
+import API from './utils/API';
+import parseString from 'xml2js';
+
 
 class App extends Component {
   state = {
@@ -21,6 +24,13 @@ class App extends Component {
     this.setState({ sideDrawerOpen: false });
   };
 
+  // test getting results
+  getZillowData = (state, city) => {
+    API.getRegionChildren(state, city).then(res => {
+      console.log('res', JSON.stringify(res));
+    }).catch(err => console.log(err));
+  };
+
   render() {
     let backdrop;
 
@@ -31,10 +41,11 @@ class App extends Component {
     return (
       <div style={{ height: '100%' }}>
         <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
-        <SideDrawer show={this.state.sideDrawerOpen} />
+        <SideDrawer show={this.state.sideDrawerOpen} />        
         {backdrop}
         <main style={{ marginTop: '64px' }}>
           <p>This is where we'll render cards and shit</p>
+          <button onClick={this.getZillowData('ga', 'atlanta')}>Click this for zillow data</button>
         </main>
       </div>
     );
